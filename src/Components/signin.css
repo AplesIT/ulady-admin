@@ -1,0 +1,26 @@
+.signup 
+{
+    position:  absolute;
+    top : 20%;
+    left: 20%;
+    width: 60%;
+    border-radius: 10px;
+    
+}
+.form-validation
+{
+    border-radius: 10px;
+    padding-right: 10px;
+    
+}
+.form-validation button
+{
+    margin-top: 10px;
+    font-size: 13px;
+    border-radius: 20px;
+}
+.avatar
+{
+    margin-top: 60%;
+    margin-left: 5%;
+}

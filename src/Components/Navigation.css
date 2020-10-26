@@ -1,0 +1,11 @@
+.input  {
+    position: relative;
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+     
+  }
+  .ui.icon.input>input {
+    border-radius: 20px;
+  }
