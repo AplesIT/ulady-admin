@@ -1,0 +1,13 @@
+.cus-Carousel li
+{
+    width: 50%;
+    margin: 10px;
+}
+.cus-Carousel .react-multiple-carousel__arrow
+{
+    background: rgba(222,222,222,0.5);
+}
+.cus-Carousel .react-multiple-carousel__arrow :hover 
+{
+    background: rgba(222,222,222,1);
+}

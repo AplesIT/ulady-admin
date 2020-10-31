@@ -1,0 +1,33 @@
+.item-row
+{
+    width: 230px !important;
+    height: 180px !important;
+    border-radius: 10px !important;
+    margin-right: 10px !important;
+    margin-bottom: 50px !important;
+}
+.btn-rough
+{
+    background: white;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    outline:none !important;
+}
+.btn-left{
+    position: absolute;
+    top: 50%;
+    left: -0%;
+
+}
+.btn-left::after{
+    content: "<";
+}
+.btn-right::after{
+    content: ">";
+}
+.btn-right{
+    position: absolute;
+    top: 50%;
+    right: -0%;
+}
