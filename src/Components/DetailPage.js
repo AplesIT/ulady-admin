@@ -3,7 +3,8 @@ import { Star, Lock, Target } from "react-feather";
 import Navigations from './CustomNavigation';
 import "./DetailPage.css";
 import ReactPlayer from "react-player"
-import Lightbox from 'react-image-lightbox';
+import { List } from 'semantic-ui-react'
+import 'semantic-ui-css/semantic.min.css'
 import Carousel, { Modal, ModalGateway } from 'react-images';
 import Footer from './Footer';
 export default class DetailPage extends Component {
@@ -115,13 +116,13 @@ export default class DetailPage extends Component {
                         </div>
                         <div className="col-3 flex-end flex-column stock">
                             <h1>Support</h1>
-                            <div className="d-flex flex-row">
+                            <div className="d-flex flex-row ">
                                 <Lock />
-                                <a style={{ fontSize: "1.125em", marginTop: 5 }} href="#">Privacy policy</a>
+                                <a style={{ fontSize: "1.125em", marginTop: 5, marginLeft: 5 }} href="#">Privacy policy</a>
                             </div>
                             <div className="d-flex flex-row mt-2 ">
                                 <Target />
-                                <a style={{ fontSize: "1.125em", marginTop: 5 }} href="#">Get Support</a>
+                                <a style={{ fontSize: "1.125em", marginTop: 5, marginLeft: 5}} href="#">Get Support</a>
                             </div>
                         </div>
                     </div>
@@ -140,23 +141,105 @@ export default class DetailPage extends Component {
                             ) : null}
                         </ModalGateway>
                     </div>
-                    <div className="d-flex flex-column" style={{background: "#f4f6f8"}}>
+                    <div className="d-flex flex-column " style={{ background: "#f4f6f8" }}>
                         <h2 style={{ margin: "50px 50px 10px 50px" }}>Pricing</h2>
-                        <div className="d-flex flex-row row" style={{ marginTop: 10,marginLeft: 50, marginBottom: 20}}>
-                        <div className="bg-white col-2 shadow d-flex flex-column" style={{borderRadius: 10}}>
+                        <div className="d-flex flex-row row justify-content-center" style={{ marginTop: 10, marginLeft: 50, marginBottom: 20 }}>
+                            <div className="bg-white list-item shadow d-flex flex-column" style={{ borderRadius: 10, minHeight :"20em", marginBottom: 40}}>
+                                <h5 className="mt-2 text-left"> FREE</h5>
                                 <h3 className="mt-2 text-center"> Free to install</h3>
-                                <p className="m-2 text-center ">When you run a campaign, you set the budget and the ad spend is billed directly to your Facebook ad account.</p>
-                        
-                        </div>
+                                <List  >
+                                    <List.Item>
+                                        <List.Icon name='checkmark' fill="green" color="green" />
+                                        <List.Content>100 monthly review request emails</List.Content>
+                                    </List.Item>
+                                    <List.Item>
+                                        <List.Icon name='checkmark' fill="green" color="green" />
+                                        <List.Content>Offer discounts for photo reviews</List.Content>
+                                    </List.Item>
+                                    <List.Item>
+                                        <List.Icon name='checkmark' fill="green" color="green" />
+                                        <List.Content>Reviews, Ratings & Popup widgets</List.Content>
+                                    </List.Item>
+                                    <List.Item>
+                                        <List.Icon name='checkmark' fill="green" color="green" />
+                                        <List.Content>Inline SEO</List.Content>
+                                    </List.Item>
+                                    <List.Item>
+                                        <List.Icon name='checkmark' fill="green" color="green" />
+                                        <List.Content>Up to 500 processed orders</List.Content>
+                                    </List.Item>
 
-                        </div>
+                                    
+                                </List>
+                                
+                            </div>
+                            <div className="bg-white list-item shadow d-flex flex-column" style={{ borderRadius: 10, minHeight :"20em", marginBottom: 40}}>
+                                <h5 className="mt-2 text-left"> FREE</h5>
+                                <h3 className="mt-2 text-center"> Free to install</h3>
+                                <List>
+                                    <List.Item>
+                                        <List.Icon name='checkmark' fill="green" color="green" />
+                                        <List.Content>100 monthly review request emails</List.Content>
+                                    </List.Item>
+                                    <List.Item>
+                                        <List.Icon name='checkmark' fill="green" color="green" />
+                                        <List.Content>Offer discounts for photo reviews</List.Content>
+                                    </List.Item>
+                                    <List.Item>
+                                        <List.Icon name='checkmark' fill="green" color="green" />
+                                        <List.Content>Reviews, Ratings & Popup widgets</List.Content>
+                                    </List.Item>
+                                    <List.Item>
+                                        <List.Icon name='checkmark' fill="green" color="green" />
+                                        <List.Content>Inline SEO</List.Content>
+                                    </List.Item>
+                                    <List.Item>
+                                        <List.Icon name='checkmark' fill="green" color="green" />
+                                        <List.Content>Up to 500 processed orders</List.Content>
+                                    </List.Item>
+
+                                    
+                                </List>
+                                
+                            </div>
+                            <div className="bg-white list-item shadow d-flex flex-column" style={{ borderRadius: 10, minHeight :"20em", marginBottom: 40}}>
+                                <h5 className="mt-2 text-left"> FREE</h5>
+                                <h3 className="mt-2 text-center"> Free to install</h3>
+                                <List>
+                                    <List.Item  >
+                                        <List.Icon name='checkmark' fill="green" color="green" />
+                                        <List.Content>100 monthly review request emails</List.Content>
+                                    </List.Item>
+                                    <List.Item>
+                                        <List.Icon name='checkmark' fill="green" color="green" />
+                                        <List.Content>Offer discounts for photo reviews</List.Content>
+                                    </List.Item>
+                                    <List.Item>
+                                        <List.Icon name='checkmark' fill="green" color="green" />
+                                        <List.Content>Reviews, Ratings & Popup widgets</List.Content>
+                                    </List.Item>
+                                    <List.Item>
+                                        <List.Icon name='checkmark' fill="green" color="green" />
+                                        <List.Content>Inline SEO</List.Content>
+                                    </List.Item>
+                                    <List.Item>
+                                        <List.Icon name='checkmark' fill="green" color="green" />
+                                        <List.Content>Up to 500 processed orders</List.Content>
+                                    </List.Item>
+
+                                    
+                                </List>
+                                
+                            </div>
+ 
+                         </div>
                     </div>
                 </div>
 
-            <Footer/>
+                <Footer />
             </div>
 
-           
+
         )
     }
 }
