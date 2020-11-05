@@ -3,3 +3,13 @@
      position: absolute;
      top: 55%;
  }
+ .arrow-icon[wobble='1'] {
+    animation: wobble 1s 1;
+    transition: all 0.2s;
+  }
+  .autoSort{
+      position: absolute;
+      right: 0%;
+      top: 10%;
+  }
+ 

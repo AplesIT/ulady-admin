@@ -72,8 +72,8 @@ export default class DetailPage extends Component {
                                         <div style={{ marginTop: 4, marginLeft: 5, color: "#637381", fontWeight: 400 }}  >4.6</div>
                                         <a style={{ marginTop: 4, marginLeft: 5 }} href="#">1258 reviews</a>
                                     </div>
-                                    <div>
-                                    </div>
+                                <div>
+                                </div>
                                 </div>
                                 <button type="button" className="btn" style={{ fontFamily: "ShopifySans, Helvetica, Arial, sans-serif", marginTop: 40, backgroundColor: "#5c6ac4", color: "#ffffff", width: "25%", height: "3em" }}>Add app</button>
                                 <div style={{ marginTop: 20, color: "#637381", fontWeight: 400, marginBottom: 0 }}>Free to install. Additional charges may apply.</div>
@@ -148,25 +148,25 @@ export default class DetailPage extends Component {
                                 <h5 className="mt-2 text-left"> FREE</h5>
                                 <h3 className="mt-2 text-center"> Free to install</h3>
                                 <List  >
-                                    <List.Item>
+                                    <List.Item style={{margin: "0px 5px 0px px"}}>
                                         <List.Icon name='checkmark' fill="green" color="green" />
-                                        <List.Content>100 monthly review request emails</List.Content>
+                                        <List.Content style={{fontSize: "1.15em"}}>100 monthly review request emails</List.Content>
                                     </List.Item>
-                                    <List.Item>
+                                    <List.Item style={{margin: "0px 5px 0px px"}}>
                                         <List.Icon name='checkmark' fill="green" color="green" />
-                                        <List.Content>Offer discounts for photo reviews</List.Content>
+                                        <List.Content style={{fontSize: "1.15em"}}>Offer discounts for photo reviews</List.Content>
                                     </List.Item>
-                                    <List.Item>
+                                    <List.Item style={{margin: "0px 5px 0px px"}}>
                                         <List.Icon name='checkmark' fill="green" color="green" />
-                                        <List.Content>Reviews, Ratings & Popup widgets</List.Content>
+                                        <List.Content style={{fontSize: "1.15em"}}>Reviews, Ratings & Popup widgets</List.Content>
                                     </List.Item>
-                                    <List.Item>
+                                    <List.Item style={{margin: "0px 5px 0px px"}}>
                                         <List.Icon name='checkmark' fill="green" color="green" />
-                                        <List.Content>Inline SEO</List.Content>
+                                        <List.Content style={{fontSize: "1.15em"}}>Inline SEO</List.Content>
                                     </List.Item>
-                                    <List.Item>
+                                    <List.Item style={{margin: "0px 5px 0px px"}}>
                                         <List.Icon name='checkmark' fill="green" color="green" />
-                                        <List.Content>Up to 500 processed orders</List.Content>
+                                        <List.Content style={{fontSize: "1.15em"}}>Up to 500 processed orders</List.Content>
                                     </List.Item>
 
                                     

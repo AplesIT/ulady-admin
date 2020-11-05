@@ -1,0 +1,10 @@
+.ui-app-card__icon-container
+{box-shadow: 1px 2px 14px 1px #c4cdd5;
+border-radius: 6px;
+background-color: #ffffff;
+overflow: hidden
+}
+.ui-app-card__name:hover
+{
+    color: rgb(107, 21, 177);
+}
