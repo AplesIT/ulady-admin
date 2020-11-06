@@ -26,24 +26,12 @@ export default class RowItem extends Component {
 { super(props);
     this.state = {
     loading: false,
-    data: [],
+    data: [1,2,3,4,5,6,7],
     headline: []
   };
 }
 
-  componentDidMount() {
-    this.setState({ loading: true });
-    console.log("app mounted");
-    fetch(
-      "https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=8ee8c21b20d24b37856fc3ab1e22a1e5"
-    )
-      .then(data => data.json())
-      .then(data =>
-        this.setState({ data: data.articles, loading: false }, () =>
-          console.log(data.articles)
-        )
-      );
-  }
+ 
 
   render() {
     return (
