@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import "./RowItem.css"
-
+import { Route , withRouter} from "react-router-dom";
 const responsive = {
   superLargeDesktop: {
     breakpoint: { max: 4000, min: 3000 },
@@ -21,7 +21,7 @@ const responsive = {
     items: 1
   }
 };
-export default class RowItem extends Component {
+class RowItem extends Component {
     constructor(props)
 { super(props);
     this.state = {
@@ -30,7 +30,10 @@ export default class RowItem extends Component {
     headline: []
   };
 }
-
+onClickDetail =()=>
+{
+  this.props.history.push("/detail");
+}
  
 
   render() {
@@ -47,7 +50,7 @@ export default class RowItem extends Component {
               <Carousel responsive={responsive} className="cus-Carousel w-100 m-4">
                 {this.state.data.map((post, indx) => {
                   return (
-                     <div className="border w-80 p-10 shadow" style={{borderRadius: 20, marginRight: "10px !important"}}>
+                     <div className="border w-80 p-10 shadow" style={{borderRadius: 20, marginRight: "10px !important"}} onClick={()=>this.onClickDetail()}>
                          <img className="img-fluid" style={{borderRadius: "20px 20px 0px 0px " }} src="https://images.pexels.com/photos/34153/pexels-photo.jpg?auto=compress&cs=tinysrgb&h=350"></img>
                          <p className="text-center" style={{margin: 10,fontSize: "1.5em",fontWeight:"bold"}}>Test Image AI</p> 
                      </div>
@@ -60,3 +63,4 @@ export default class RowItem extends Component {
     );
   }
 }
+export default withRouter(RowItem);

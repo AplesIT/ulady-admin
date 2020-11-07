@@ -5,8 +5,9 @@ import { Input } from 'semantic-ui-react';
 import {User} from "react-feather";
 import 'semantic-ui-css/semantic.min.css'
 import "./Navigation.css";
+import { Route , withRouter} from "react-router-dom";
 import {Button,Menu,MenuItem}  from '@material-ui/core';
-export default class CustomNavigation extends Component {
+ class CustomNavigation extends Component {
   constructor(props)
   {
     super(props);
@@ -28,16 +29,21 @@ export default class CustomNavigation extends Component {
   handleClose = () => {
     this.setAnchorEl(null);
   };
+  clickLogin=()=>
+  {
+    this.handleClose();
+    this.props.history.push("/auth");
+  }
     render() {
         return (
             <div className="Navigation ">
             <header>
             <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
-              <Navbar.Brand href="#home">AIgoHub</Navbar.Brand>
+              <Navbar.Brand href="/home">AIgoHub</Navbar.Brand>
               <Navbar.Toggle aria-controls="responsive-navbar-nav" />
               <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="mr-auto">
-                  <Nav.Link href="#features">Categories</Nav.Link>
+                  <Nav.Link href="/browser">Categories</Nav.Link>
                   <Nav.Link href="#pricing">Create organiration</Nav.Link>
                   <Nav.Link href="#pricing">Docs</Nav.Link>
                 </Nav>
@@ -58,7 +64,7 @@ export default class CustomNavigation extends Component {
                   >
                   <MenuItem onClick={(e)=>this.handleClose()}>Profile</MenuItem>
                   <MenuItem onClick={(e)=>this.handleClose()}>My account</MenuItem>
-                  <MenuItem onClick={(e)=>this.handleClose()}>Logout</MenuItem>
+                  <MenuItem onClick={(e)=>this.clickLogin()}>Logout</MenuItem>
                   </Menu>
               </Navbar.Collapse>
             </Navbar>
@@ -71,3 +77,4 @@ export default class CustomNavigation extends Component {
         )
     }
 }
+export default withRouter(CustomNavigation);

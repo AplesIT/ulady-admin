@@ -3,7 +3,8 @@ import { Bookmark } from "react-feather";
 import "./CustomCard.css"
 import Slider from "react-slick";
 import { Tooltip } from 'reactstrap';
-export default class CustomCard extends Component {
+import { Route , withRouter} from "react-router-dom";
+class CustomCard extends Component {
     constructor(props)
     {
         super(props);
@@ -20,10 +21,14 @@ export default class CustomCard extends Component {
             }
         )
     }
+    onClickDetail=()=>
+    {
+        this.props.history.push("/detail");
+    }
     render() {
         return (
 
-            <div className="item-row border shadow special-item ml-5 d-flex flex-column" style={{ width: "230px  ", height: "180px  ", borderRadius: 5 }}>
+            <div className="item-row border shadow special-item ml-5 d-flex flex-column" style={{ width: "230px  ", height: "180px  ", borderRadius: 5 }} onClick={()=>{this.onClickDetail()}} >
                 <Bookmark className="bookMark" />
                 < div className="mcard-title  d-flex flex-row row mt-3">
                     <img className="col-4 img-fluid" src="https://rapidapi-prod-apis.s3.amazonaws.com/63/5abbaa32ca4265a27ee3ba46c2f5c3/cd0bf186d542466b03aee00e539c575a.png" />
@@ -57,3 +62,4 @@ export default class CustomCard extends Component {
         )
     }
 }
+export default withRouter(CustomCard);

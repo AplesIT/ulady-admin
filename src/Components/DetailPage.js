@@ -61,7 +61,7 @@ export default class DetailPage extends Component {
                                 <div className="d-flex flex-row">
                                     <div style={{ fontSize: "3em" }}> Facebook channel</div>
                                     <text className="mt-2 ml-2">by</text>
-                                    <a className="ml-1 mt-2" href="#">AIHUB</a>
+                                    <a className="ml-1 mt-2" href="/home">AIHUB</a>
                                 </div>
                                 <div style={{ fontSize: "1.75em", marginTop: 10, color: "#454f5b", fontWeight: 400, marginTop: 20 }}>
                                     Bring your products to Facebook and Instagram users.
