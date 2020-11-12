@@ -1,0 +1,20 @@
+.DatePicker .react-date-picker__wrapper 
+{
+    border-radius:  20px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.DatePicker .react-date-picker__inputGroup
+{
+    margin-left: 10px;
+    margin-top: 10px;
+}
+.DatePicker  
+{
+    margin-top: 10px;
+}
+.DatePicker .react-date-picker__clear-button, .DatePicker .react-date-picker__calendar-button
+{
+    margin-top: 5px;
+ 
+}

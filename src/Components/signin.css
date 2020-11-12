@@ -26,3 +26,13 @@
     margin-top: 60%;
     margin-left: 5%;
 }
+ 
+.dropdownsex #dropdown-basic-button
+{
+    background-color: white; 
+    margin-left: 20px;
+    color: black;
+    padding: 7px;
+    border: 1px thin black;
+
+}
