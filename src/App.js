@@ -6,6 +6,7 @@ import Home from './Components/Home';
 import PrimarySearchAppBar from './Components/PrimarySearchAppBar';
 import DetailPage from './Components/DetailPage';
 import Browser from "./Components/Browser"
+import PostApi from './Components/PostApi';
 function App() {
   return (
     <Switch>
@@ -13,8 +14,8 @@ function App() {
     <Route path="/auth" component={Authen} />
     <Route path="/home" component={Home} />
     <Route path="/detail" component={DetailPage}/>
-    <Route path="/test" component={PrimarySearchAppBar}/>
     <Route path="/browser" component={Browser}/>
+    <Route path="/postapi" component={PostApi}/>
   </Switch>
   );
 }

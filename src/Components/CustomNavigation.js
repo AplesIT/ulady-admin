@@ -44,7 +44,7 @@ import {Button,Menu,MenuItem}  from '@material-ui/core';
               <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="mr-auto">
                   <Nav.Link href="/browser">Categories</Nav.Link>
-                  <Nav.Link href="#pricing">Create organiration</Nav.Link>
+                  <Nav.Link href="/postapi">Create organiration</Nav.Link>
                   <Nav.Link href="#pricing">Docs</Nav.Link>
                 </Nav>
                 <Nav>
