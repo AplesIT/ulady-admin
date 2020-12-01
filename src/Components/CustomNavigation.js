@@ -51,7 +51,7 @@ import {Button,Menu,MenuItem}  from '@material-ui/core';
                 <div className="ui input"  styles={{borderRadius: '10px'}}>
                  <Input icon={{ name: 'search', link: true }} placeholder='Search...' />
                   </div>
-                  <Nav.Link href="#deets">Add your Apps</Nav.Link>
+                  <Nav.Link href="/yourapis">Your Apis</Nav.Link>
                   <Nav.Link eventKey={2} href="#memes"> Themes</Nav.Link>
                   <User style={{ borderRadius: "50%"}} onClick={(e)=>this.handleClick(e)}/>
                 </Nav>

@@ -82,3 +82,19 @@
 {
     border-radius: 5px !important;
 }
+.PostApi textarea
+{
+
+    margin-left: 10px;
+    width: 100% !important;
+    margin-bottom: 10px;
+    border-radius : 5px;
+    padding: 5px;
+}
+.PostApi textarea:focus{
+    border: none;
+}
+.PostApi .special-txtarea
+{
+    width: 100% !important;
+}

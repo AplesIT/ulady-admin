@@ -22,7 +22,8 @@ import "@pathofdev/react-tag-input/build/index.css";
 import 'react-notifications/lib/notifications.css';
 import {NotificationContainer, NotificationManager} from 'react-notifications';
 
-
+import { Editor } from 'react-draft-wysiwyg';
+import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css'; 
 import { withRouter } from 'react-router-dom';
 
 import "./PostApi.css"
@@ -171,7 +172,7 @@ import Footer from './Footer';
                             <div className="d-flex flex-row row mt-3">
 
 
-                                <TextField style={{ height: "20px" }} className="col-8 ml-3 mr-3" InputProps={{ className: classes.multilineColor }} required id="name" variant="outlined" label="Name" placeholder="Enter Name Api" defaultValue="FaceBook" />
+                                <TextField style={{ height: "20px" }} className="col-8 ml-3 mr-3 mb-2" InputProps={{ className: classes.multilineColor }} required id="name" variant="outlined" label="Name" placeholder="Enter Name Api" defaultValue="FaceBook" />
                                 <TextField className="col-3" InputProps={{ className: classes.multilineColor }} required id="author" variant="outlined" label="Author" placeholder="Enter Author"></TextField>
                                 <br />
                             </div>
@@ -211,8 +212,8 @@ import Footer from './Footer';
                         (
                             <div className="shadow-lg  col-3 mb-5 ml-5 rounded" style={{ position: "relative", paddingRight: "4vh", paddingTop: "2vh"}}>
 
-                                <TextField InputProps={{ className: classes.multilineColor }} className="urlVideo " required id="video" variant='outlined' label="Youtube" placeholder="Enter demo video" />
-                                <TextareaAutosize style={{ marginLeft: "10px", width: "36ch", marginBottom: 10 }} aria-label="minimum height" rowsMin={5} placeholder="Minimum 3 rows" />
+                                <TextField InputProps={{ className: classes.multilineColor }} className="featurename" required id="video" variant='outlined' label="Name Feature" placeholder="Enter name feature" />
+                                <TextareaAutosize    aria-label="minimum height" rowsMin={3} placeholder="Minimum 3 rows" />
                             </div>
                         ))}
                     <div className="shadow-lg  col-3 ml-3 mb-5  ml-5 rounded" style={{ position: "relative", minHeight: "15rem" }}>
@@ -232,7 +233,8 @@ import Footer from './Footer';
                     <div className="txt-title-name" style={{background: "white", margin: "5px", zIndex :100}} >
                         <h2 >Media gallery</h2>
                     </div>
-                        <ImageUploader
+                    <img src="/upload.png" className="img-fluid mt-4" style={{width: 50, height: 50, marginLeft: "40%"}}/>
+                          <ImageUploader
                             withIcon={true}
                             buttonText='Choose images'
                             onChange={(picture) => changeImage(picture)}
@@ -240,6 +242,15 @@ import Footer from './Footer';
                             maxFileSize={5242880}
                             withPreview={true}
                         />
+                        <Editor 
+                            
+                            toolbarClassName="toolbarClassName"
+                            wrapperClassName="wrapperClassName"
+                            editorClassName="editorClassName"
+                             
+                        />
+
+                         
                     </div>
                     <div className="col-5 shadow-lg rounded mt-5 d-flex flex-column mb-3" style={{ padding: "30px", position: "relative" }}>
                     <div className="txt-title-name" style={{background: "white", marginLeft: "8%",marginTop: "2%", zIndex :100}} >
@@ -253,20 +264,15 @@ import Footer from './Footer';
                                     <OutlinedInput
 
                                         id="outlined-adornment-amount"
+                                        className='txt-price-feature'
                                         style={{ color: "black", height: "3rem" }}
+                                        placeholder="Input price"
                                         startAdornment={<InputAdornment position="start">$$</InputAdornment>}
                                         labelWidth={60}
                                     />
                                 </FormControl>
-                                <ReactTagInput
-                                    tags={tagPrice}
-                                    placeholder="Enter price have features"
-                                    maxTags={10}
-                                    editable={true}
-                                    readOnly={false}
-                                    removeOnBackspace={true}
-                                    onChange={(newTags) => setTagPrice(newTags)}
-                                />
+                                <TextareaAutosize className="special-txtarea" aria-label="minimum height"  rowsMin={5} rowsMax={7} placeholder="Enter detail feature. Maximum 7 features" />
+                               
                                 <hr />
                             </div>
                         ))}
