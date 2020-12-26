@@ -176,7 +176,7 @@ export default class SupportPostApi extends Component {
                     <div className="d-flex flex-column">
                         <div className="feild-1">
                             <div className="title post">
-                                <h2>Chọn loại sản phẩm  </h2>
+                                <h2>Select Category</h2>
                             </div>
                             {[1, 2, 3, 4].map((index) => {
                                 return (
@@ -206,7 +206,7 @@ export default class SupportPostApi extends Component {
                         </div>
                         <div className="feild-2">
                             <div className="title post">
-                                <h2> Chọn thị trường </h2>
+                                <h2> Select type SDK </h2>
                             </div>
                             {[1, 2].map((index) => {
                                 return (
@@ -236,7 +236,7 @@ export default class SupportPostApi extends Component {
                         </div>
                         <div className="feild-3">
                             <div className="title post">
-                                <h2> Chỉnh sửa SEO</h2>
+                                <h2> Edit SEO</h2>
                             </div>
                             <div className="shadow mt-2 p-2 mb-5" style={{ minHeight: "20rem" }}>
                                 <Editor
