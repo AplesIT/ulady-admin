@@ -7,6 +7,7 @@ import 'semantic-ui-css/semantic.min.css'
 import "./Navigation.css";
 import { Route , withRouter} from "react-router-dom";
 import {Button,Menu,MenuItem}  from '@material-ui/core';
+import removeToken from "../Actions/Authentication/removeToken";
  class CustomNavigation extends Component {
   constructor(props)
   {
@@ -32,6 +33,7 @@ import {Button,Menu,MenuItem}  from '@material-ui/core';
   clickLogin=()=>
   {
     this.handleClose();
+    removeToken();
     this.props.history.push("/auth");
   }
     render() {
@@ -44,7 +46,8 @@ import {Button,Menu,MenuItem}  from '@material-ui/core';
               <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="mr-auto">
                   <Nav.Link href="/browser">Categories</Nav.Link>
-                  <Nav.Link href="/postapi">Create organiration</Nav.Link>
+                  <Nav.Link href="/postapi">Create product</Nav.Link>
+                  <Nav.Link href="/createCategory">Create Type</Nav.Link>
                   <Nav.Link href="#pricing">Docs</Nav.Link>
                 </Nav>
                 <Nav>

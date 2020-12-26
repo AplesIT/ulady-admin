@@ -13,7 +13,10 @@ import {
 import { withStyles } from "@material-ui/core/styles";
 import { TextValidator, ValidatorForm } from "react-material-ui-form-validator";
 import { withRouter } from 'react-router-dom';
-
+import {DomainHost, EndPointUser} from "../ApiConfig/ConstantApi";
+import { requestApi } from '../Actions/RequestApi';
+import { isEmpty } from 'lodash';
+import storeToken from '../Actions/Authentication/storageToken';
 class SignIn extends Component {
   constructor(props) {
     super(props);
@@ -28,14 +31,42 @@ class SignIn extends Component {
     });
 
   };
+ 
   handleFormSubmit = event => {
-    console.log(this.state.agreement)
+ 
     if (this.validations()) {
-      this.props.history.push("/home");
+      
+      let {email,password}= this.state
+     var params = {
+       "email" :email,
+       "password": password
+     }
+     var url= DomainHost.AIGOHUB+ EndPointUser.Login.url;
+     var method=EndPointUser.Login.method;
+     let {createNotification}= this.props;
+     requestApi({params, url,method}).then((res)=>
+     {
+        
+        if(!isEmpty(res.token)){
+            var access_token=res.token  
+             storeToken({access_token});
+             this.props.history.push("/home");
+        }
+      
+     }).catch(error =>
+      {
+        createNotification('error',error.message,"Error")
+      });
+      
     }
   };
   validations = () => {
-    return true;
+    let{createNotification}=this.props;
+    if(this.state.agreement===false) {
+      createNotification("error","Please agree with our policy!!!","Error");
+      return false;
+  }
+  return true;
   }
   handleAgreement = event => {
     this.setState({

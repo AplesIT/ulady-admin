@@ -10,12 +10,14 @@ import {
   CircularProgress,
   Paper
 } from "@material-ui/core";
-
+import {DomainHost, EndPointUser} from "../ApiConfig/ConstantApi";
+import { requestApi } from '../Actions/RequestApi';
 import { TextValidator, ValidatorForm } from "react-material-ui-form-validator";
 import { withRouter } from 'react-router-dom';
 import ComponentDate from "./ComponentDate"
 import { DropdownButton, Dropdown } from "react-bootstrap";
 import { FacebookLoginButton, GoogleLoginButton } from "react-social-login-buttons";
+const default_role="USER";
 const formatDate = (date) => {	// formats a JS date to 'yyyy-mm-dd'
   var d = new Date(date),
     month = '' + (d.getMonth() + 1),
@@ -48,8 +50,48 @@ class Signup extends Component {
     this.setState({ date: date })
   }
   handleFormSubmit = event => {
-    console.log(this.state.agreement)
+    let {username,email, password,phone,sex, date= new Date()} = this.state
+    if(this.validations())
+    {
+      let  params ={};
+      let {createNotification}= this.props;
+      params["username"]=username;
+      params["email"]=email;
+      params["password"]=password;
+      params["phone"]=phone;
+ 
+      params["role"]=default_role;
+ 
+      let url = DomainHost.AIGOHUB+ EndPointUser.Create.url;
+      let method = EndPointUser.Create.method;
+      requestApi({url, params,method}).then((res)=>{
+         if(res.status === 200)
+         {
+           
+            createNotification('success',"Create successfull account","success");
+            this.props.funcClick();
+
+         }
+         
+      }
+      ).catch(error => {
+           
+           createNotification('error',error.message,"Error")
+      })
+    }
+
+    
   };
+  validations =()=>
+  {
+    let{createNotification} = this.props;
+    if(this.state.password !== this.state.repassword) return false;
+    if(this.state.agreement===false) {
+        createNotification("error","Please agree with our policy!!!","Error");
+        return false;
+    }
+    return true; 
+  }
   handleAgreement = event => {
     this.setState({
       [event.target.name]: event.target.checked
@@ -64,7 +106,7 @@ class Signup extends Component {
     )
   }
   render() {
-    let { email, password, repassword, phone } = this.state
+    let {username,email, password, repassword, phone } = this.state
     return (
 
       <div className="form-validation col-lg-4 col-md-6 col-xs-6 shadow ">
@@ -77,7 +119,7 @@ class Signup extends Component {
             label="Username"
             type="text"
             name="username"
-            value={email}
+            value={username}
             onChange={this.handleChange}
             validators={["required"]}
             errorMessages={[
@@ -130,13 +172,13 @@ class Signup extends Component {
             variant="outlined"
             onChange={this.handleChange}
             name="repassword"
-            type="repassword"
+            type="password"
             value={repassword}
             validators={["required"]}
             errorMessages={["this field is required"]}
           />
           <div className="d-flex flex-row mt-3 " >
-            <ComponentDate />
+            <ComponentDate setDate={this.setDate} />
             <DropdownButton id="dropdown-basic-button" title={this.state.sex} className="dropdownsex">
               <Dropdown.Item onClick={() => { this.setValueDropDown("Male") }}>Male</Dropdown.Item>
               <Dropdown.Item onClick={() => { this.setValueDropDown("Female") }}>Female</Dropdown.Item>
@@ -154,7 +196,7 @@ class Signup extends Component {
                 color="primary"
                 type="submit">
                 Sign Up
-                        </Button>
+              </Button>
             </div>
             <span className="mt-2 col-1"></span>
             <Button
@@ -164,7 +206,7 @@ class Signup extends Component {
               onClick={() => this.props.funcClick()}
               color="primary">
               Sign in
-                      </Button>
+            </Button>
           </div>
         </ValidatorForm>
 

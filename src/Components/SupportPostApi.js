@@ -171,7 +171,7 @@ export default class SupportPostApi extends Component {
                     variant="contained"
                     onClick={() => this.createNotification("success")}>
                        Create
-            </Button>
+                 </Button>
                 <div className="container-post-api border rounded shadow h-100 p-5" style={{ margin: "5% 10% 5% 10%" }}>
                     <div className="d-flex flex-column">
                         <div className="feild-1">
