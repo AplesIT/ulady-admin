@@ -51,11 +51,12 @@
     "reactstrap": "^8.7.1",
     "semantic-ui-css": "^2.4.1",
     "semantic-ui-react": "^2.0.0",
+    "serve": "^11.3.2",
     "slick-carousel": "^1.8.1",
     "web-vitals": "^0.2.4"
   },
   "scripts": {
-    "start": "node --max_old_space_size=4096 node_modules/.bin/react-scripts start",
+    "start": "serve -s build",
     "build": "node --max_old_space_size=4096 node_modules/.bin/react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
