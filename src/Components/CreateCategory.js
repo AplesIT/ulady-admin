@@ -4,15 +4,14 @@ import { Editor } from 'react-draft-wysiwyg';
 import { EditorState } from 'draft-js';
 import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 import { Col, Row, Input, Button } from 'reactstrap';
-import CustomNavigation from './CustomNavigation';
-import Footer from './Footer';
+import { Route , withRouter} from "react-router-dom";
 import { NotificationContainer, NotificationManager } from 'react-notifications';
 import "./CreateCategory.scss"
 import { isEmpty } from "lodash"
 import { requestApi} from '../Actions/RequestApi';
 import { DomainHost, EndPointCategory, EndPointSDK} from "../ApiConfig/ConstantApi"
 import { ACCESS_TOKEN } from "../StorageLocal/LocalStorage"
-export default class CreateCategory extends Component {
+  class CreateCategory extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -52,6 +51,7 @@ export default class CreateCategory extends Component {
     onCreatePostCategory = () => {
     
         let warning = "",{name="Category"}=this.props
+        
         if (isEmpty(this.state.editorState)) {
             warning += "Description is emtpy. ";
         }
@@ -63,7 +63,9 @@ export default class CreateCategory extends Component {
             "name": this.state.title,
             "description": this.state.editorState
         }
-        let url = DomainHost.AIGOHUB +  name==="Category"?EndPointCategory.Create.url: EndPointSDK.Create.url;
+        let endpoint= name==="Category"?EndPointCategory.Create.url: EndPointSDK.Create.url;
+        let url = DomainHost.AIGOHUB +  endpoint
+        
         let method = EndPointCategory.Create.method;
         let headers = {'Authorization': 'Bearer ' + localStorage.getItem(ACCESS_TOKEN) }
         requestApi({url,method, params, headers }).then((res) => {
@@ -120,3 +122,4 @@ export default class CreateCategory extends Component {
         )
     }
 }
+export default withRouter(CreateCategory);
