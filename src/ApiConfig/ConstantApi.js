@@ -1,7 +1,7 @@
 import { Domain } from "@material-ui/icons";
 
 export  const DomainHost = {
-    "AIGOHUB":  "http://aigohub-be-test.aigohub.com/api/",
+    "AIGOHUB":  "https://aigohub-be-test.aigohub.com/api/",
 }
 export const EndPointUser ={
     "Create" : {"url":"users/create", "method": "POST"},

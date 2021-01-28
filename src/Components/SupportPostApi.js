@@ -174,6 +174,26 @@ export default class SupportPostApi extends Component {
                  </Button>
                 <div className="container-post-api border rounded shadow h-100 p-5" style={{ margin: "5% 10% 5% 10%" }}>
                     <div className="d-flex flex-column">
+                    <div className="feild-0 mb-2">
+                            <div className="title post">
+                                <h2 className="mb-2">Author Api </h2>
+                            </div>
+                             <div className="d-flex flex-row row">
+                                 <div className="col-3">  
+                                 <h4>Name Api</h4>
+                                 <Input />
+                                 </div>
+                                 <div className="col-3">
+                                 <h4>Name Author </h4>
+                                 <Input />
+                                 </div>
+                                 <div className="col-6">
+                                <h4>Sologan</h4>
+                                 <Input/>
+                                 </div>
+                             </div>
+                        </div>
+                     
                         <div className="feild-1">
                             <div className="title post">
                                 <h2>Select Category</h2>
